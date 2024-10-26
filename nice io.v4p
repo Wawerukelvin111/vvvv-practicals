@@ -1,0 +1,123 @@
+<!DOCTYPE PATCH  SYSTEM "http://vvvv.org/versions/vvvv50beta42.dtd" >
+   <PATCH nodename="C:\Users\Kelvin\Documents\vvvv\nice io.v4p" scrollx="0" scrolly="-330" systemname="nice io" filename="C:\Users\Kelvin\Documents\vvvv\nice io.v4p">
+   <BOUNDS type="Window" left="1185" top="405" width="17595" height="6090">
+   </BOUNDS>
+   <NODE systemname="Renderer (EX9)" nodename="Renderer (EX9)" componentmode="InAWindow" id="16">
+   <BOUNDS type="Node" left="7335" top="2955" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7335" top="2955" width="2400" height="1800">
+   </BOUNDS>
+   <BOUNDS type="Window" left="1215" top="6450" width="17565" height="4350">
+   </BOUNDS>
+   <PIN pinname="Layers" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="Text (EX9)" filename="%VVVV%\lib\nodes\plugins\VVVV.Nodes.dll" nodename="Text (EX9)" componentmode="Hidden" id="17">
+   <BOUNDS type="Node" left="7440" top="1965" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7440" top="1965" width="3000" height="3000">
+   </BOUNDS>
+   <PIN pinname="Layer" visible="1">
+   </PIN>
+   <PIN pinname="Font" visible="1">
+   </PIN>
+   <PIN pinname="Brush Color" visible="1">
+   </PIN>
+   <PIN pinname="Show Brush" visible="1">
+   </PIN>
+   <PIN pinname="Text" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="17" srcpinname="Layer" dstnodeid="16" dstpinname="Layers">
+   </LINK>
+   <NODE systemname="IOBox (Enumerations)" nodename="IOBox (Enumerations)" componentmode="InABox" id="18">
+   <BOUNDS type="Node" left="7695" top="765" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="7695" top="765" width="1200" height="240">
+   </BOUNDS>
+   <PIN pinname="Output Enum" visible="1">
+   </PIN>
+   <PIN pinname="Input Enum" slicecount="1" values="|Comic Sans MS|">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="18" srcpinname="Output Enum" dstnodeid="17" dstpinname="Font">
+   </LINK>
+   <NODE systemname="IOBox (Color)" nodename="IOBox (Color)" componentmode="InABox" id="19">
+   <BOUNDS type="Node" left="9135" top="720" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9135" top="720" width="2250" height="480">
+   </BOUNDS>
+   <PIN pinname="Color Output" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="19" srcpinname="Color Output" dstnodeid="17" dstpinname="Brush Color">
+   </LINK>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="20">
+   <BOUNDS type="Node" left="9705" top="1260" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="9705" top="1260" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Toggle">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="20" srcpinname="Y Output Value" dstnodeid="17" dstpinname="Show Brush">
+   </LINK>
+   <NODE systemname="IOBox (String)" nodename="IOBox (String)" componentmode="InABox" id="21">
+   <BOUNDS type="Node" left="5850" top="780" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="5850" top="780" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Input String" slicecount="1" values="Kelvin">
+   </PIN>
+   <PIN pinname="Output String" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="21" srcpinname="Output String" dstnodeid="17" dstpinname="Text">
+   </LINK>
+   <NODE systemname="Counter (Animation)" nodename="Counter (Animation)" componentmode="Hidden" id="22">
+   <BOUNDS type="Node" left="11145" top="2610" width="100" height="100">
+   </BOUNDS>
+   <PIN pinname="Up" visible="1">
+   </PIN>
+   <PIN pinname="Output" visible="1">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="24">
+   <BOUNDS type="Node" left="11310" top="1590" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11310" top="1590" width="480" height="480">
+   </BOUNDS>
+   <PIN pinname="Value Type" slicecount="1" values="Boolean">
+   </PIN>
+   <PIN pinname="Behavior" slicecount="1" values="Bang">
+   </PIN>
+   <PIN pinname="Y Output Value" visible="1">
+   </PIN>
+   <PIN pinname="X Input Value" slicecount="1" values="0">
+   </PIN>
+   <PIN pinname="Y Input Value" slicecount="1" values="0">
+   </PIN>
+   </NODE>
+   <NODE systemname="IOBox (Value Advanced)" nodename="IOBox (Value Advanced)" componentmode="InABox" id="25">
+   <BOUNDS type="Node" left="11295" top="3705" width="100" height="100">
+   </BOUNDS>
+   <BOUNDS type="Box" left="11295" top="3705" width="795" height="240">
+   </BOUNDS>
+   <PIN pinname="Y Input Value" visible="1">
+   </PIN>
+   </NODE>
+   <LINK srcnodeid="22" srcpinname="Output" dstnodeid="25" dstpinname="Y Input Value">
+   </LINK>
+   <LINK srcnodeid="20" srcpinname="Y Output Value" dstnodeid="22" dstpinname="Up">
+   </LINK>
+   <PACK Name="addonpack" Version="42.0.0">
+   </PACK>
+   </PATCH>
